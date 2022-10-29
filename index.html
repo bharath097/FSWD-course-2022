@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Number Guessing Game</title>
+
+	<style>
+		html {
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	}
+	body {
+        font-size: large;
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuVd5PnmRhmWJ5Zja6YPFsJuE2BJdqBy8PCQ&usqp=CAU');
+	width: 50%;
+	max-width: 800px;
+	min-width: 480px;
+	margin: 0 auto;
+	}
+    h1
+    {
+        text-align: center;
+    }
+    p{  
+        text-align: center;
+        font-size:x-large;
+    }
+	</style>
+</head>
+
+<body>
+    <div id="backtag">
+        <h1 style="color:#ff2f2f">GUESS THE NUMBER.</h1><br><br>
+        <p style="color:rgb(255, 163, 255)"><b>We have selected a random number between 1 - 10.
+        See if you can guess it.</p><br>
+
+        <div class="form">
+	        <label for="guessField" style="color:rgb(255, 245, 48); text-align: center;">Enter a guess: </label>
+	        <input type = "text" id = "guessField" class = "guessField" placeholder="Enter a number btw 1-10">
+	        <input type = "submit" value = "Submit guess"
+		    class = "guessSubmit" id = "submitguess">
+        </div>
+    </div>
+
+
+</body>
+<script type = "text/javascript">
+
+	// random value generated
+	var y = Math.floor(Math.random() * 10 + 1);
+    console.log(y)
+	
+	// counting the number of guesses
+	// made for correct Guess
+	var guess = 1;
+	
+	document.getElementById("submitguess").onclick = function(){
+	
+// number guessed by user	
+var x = document.getElementById("guessField").value;
+
+if(x == y)
+{	
+	alert("CONGRATULATIONS!!! YOU GUESSED IT RIGHT IN "
+			+ guess + " GUESS ");
+}
+else if(x > y) /* if guessed number is greater
+				than actual number*/
+{	
+	guess++;
+	alert("TRY A SMALLER NUMBER bro");
+}
+else
+{
+	guess++;
+	alert("TRY A GREATER NUMBER bro")
+}
+}
+</script>
+</html>					
